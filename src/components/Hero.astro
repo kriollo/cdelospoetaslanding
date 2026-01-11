@@ -1,9 +1,12 @@
 ---
-const images = [
-  "/heroSlide/hero1.webp",
-  "/heroSlide/hero2.webp",
-  "/heroSlide/hero3.webp",
-];
+import { Image } from "astro:assets";
+import hero1 from "../assets/heroSlide/hero1.webp";
+import hero2 from "../assets/heroSlide/hero2.webp";
+import hero3 from "../assets/heroSlide/hero3.webp";
+import hero4 from "../assets/heroSlide/hero4.webp";
+import hero5 from "../assets/heroSlide/hero5.webp";
+
+const images = [hero4, hero1, hero5, hero2, hero3];
 ---
 
 <section
@@ -14,11 +17,14 @@ const images = [
   <div class="absolute inset-0 z-0">
     {
       images.map((img, index) => (
-        <img
+        <Image
           src={img}
           alt={`Vista del hotel ${index + 1}`}
           class={`absolute inset-0 w-full h-full object-cover object-bottom transition-opacity duration-1000 ease-in-out ${index === 0 ? "opacity-100" : "opacity-0"}`}
           data-hero-slide
+          loading={index === 0 ? "eager" : "lazy"}
+          widths={[640, 768, 1024, 1280, 1920]}
+          sizes="100vw"
         />
       ))
     }
@@ -34,10 +40,13 @@ const images = [
   <div class="relative z-20 container mx-auto px-4 flex flex-col items-center">
     <!-- Logo -->
     <div class="mb-8 opacity-0 translate-y-10" id="hero-logo">
-      <img
-        src="/logo.webp"
+      <Image
+        src={import("../assets/logo.webp")}
         alt="Logo Centro de Descanso Los Poetas"
         class="w-48 md:w-64 h-auto drop-shadow-2xl"
+        loading="eager"
+        widths={[192, 256]}
+        sizes="(max-width: 768px) 192px, 256px"
       />
     </div>
 

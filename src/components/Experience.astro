@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import garden from "../assets/garden.webp";
 ---
 
 <section id="experience" class="py-24 bg-white overflow-hidden">
@@ -65,10 +66,13 @@
         <div
           class="relative z-10 rounded-2xl overflow-hidden shadow-2xl skew-y-1 lg:skew-y-3 transform transition-transform hover:skew-y-0 duration-700"
         >
-          <img
-            src="/garden.webp"
+          <Image
+            src={garden}
             alt="Jardines del Centro de Descanso Los Poetas"
             class="w-full h-auto object-cover"
+            loading="lazy"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
         <!-- Decorative elements -->

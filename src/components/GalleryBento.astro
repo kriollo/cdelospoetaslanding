@@ -1,5 +1,9 @@
 ---
-
+import { Image } from "astro:assets";
+import bento1 from "../assets/bento1.webp";
+import bento2 from "../assets/bento2.webp";
+import bento3 from "../assets/bento3.webp";
+import bento4 from "../assets/bento4.webp";
 ---
 
 <section id="galeria" class="py-24 bg-slate-50">
@@ -18,10 +22,13 @@
       <div
         class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-2xl cursor-pointer"
       >
-        <img
-          src="/bento2.webp"
+        <Image
+          src={bento2}
           alt="Vista Principal"
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+          widths={[400, 600, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div
           class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"
@@ -38,10 +45,13 @@
       <div
         class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer"
       >
-        <img
-          src="/bento3.webp"
+        <Image
+          src={bento3}
           alt="Interior Cabaña"
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+          widths={[400, 600]}
+          sizes="(max-width: 768px) 100vw, 25vw"
         />
         <div
           class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"
@@ -64,10 +74,13 @@
       <div
         class="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer"
       >
-        <img
-          src="/bento1.webp"
+        <Image
+          src={bento1}
           alt="Jardines"
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+          widths={[400, 600, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div
           class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"
@@ -87,10 +100,13 @@
       <div
         class="md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-2xl cursor-pointer"
       >
-        <img
-          src="/bento4.webp"
+        <Image
+          src={bento4}
           alt="Atardecer"
           class="w-full h-full object-cover object-right transition-transform duration-700 group-hover:scale-110 filter hue-rotate-15"
+          loading="lazy"
+          widths={[400, 600]}
+          sizes="(max-width: 768px) 100vw, 25vw"
         />
         <div
           class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"
