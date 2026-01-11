@@ -21,11 +21,100 @@ const {
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="hotel boutique El Quisco, cabañas El Quisco, arriendo cabañas, descanso litoral central, hotel accesible Chile, cabañas con WiFi, hospedaje El Quisco, turismo Quinta Región"
+    />
+    <meta name="author" content="Centro de Descanso Los Poetas" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://cdelospoetas.cl" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cdelospoetas.cl" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://cdelospoetas.cl/logo.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="Centro de Descanso Los Poetas" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cdelospoetas.cl" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:image"
+      content="https://cdelospoetas.cl/logo.webp"
+    />
+
+    <!-- LLM-Friendly Metadata -->
+    <meta
+      name="ai:context"
+      content="Centro de Descanso Los Poetas es un hotel boutique en El Quisco, Chile, especializado en descanso profundo y accesibilidad universal. Ofrece cabañas independientes con WiFi, cocina equipada, y diseño inclusivo para personas con movilidad reducida."
+    />
+    <meta
+      name="ai:purpose"
+      content="Reservas y consultas sobre alojamiento en cabañas boutique en El Quisco, Quinta Región, Chile"
+    />
+    <meta name="ai:contact" content="WhatsApp: +56 9 5229 9793" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="apple-touch-icon" href="/logo.webp" />
+
+    <!-- JSON-LD Schema -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        name: "Centro de Descanso Los Poetas",
+        description: description,
+        url: "https://cdelospoetas.cl",
+        telephone: "+56952299793",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "El Quisco",
+          addressRegion: "Valparaíso",
+          addressCountry: "CL",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "-33.3947",
+          longitude: "-71.6897",
+        },
+        priceRange: "$$",
+        amenityFeature: [
+          { "@type": "LocationFeatureSpecification", name: "WiFi gratuito" },
+          {
+            "@type": "LocationFeatureSpecification",
+            name: "Accesibilidad para sillas de ruedas",
+          },
+          { "@type": "LocationFeatureSpecification", name: "Cocina equipada" },
+          { "@type": "LocationFeatureSpecification", name: "Estacionamiento" },
+        ],
+        starRating: {
+          "@type": "Rating",
+          ratingValue: "4",
+        },
+        image: "https://cdelospoetas.cl/logo.webp",
+        sameAs: ["https://www.instagram.com/cdelospoetas"],
+      })}
+    />
+
     <ViewTransitions />
   </head>
   <body
