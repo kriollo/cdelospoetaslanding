@@ -16,8 +16,8 @@ const {
   description = "Centro de Descanso Los Poetas - Hotel Boutique en El Quisco. Cabañas de alto estándar, descanso profundo y conexión con la naturaleza.",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL("/logo.webp", Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).href;
+const socialImageURL = new URL("/logo.webp", Astro.url.origin).href;
 const siteURL = Astro.site;
 ---
 
