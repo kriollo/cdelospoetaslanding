@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://wwww.cdelospoetas.cl',
+  site: 'https://www.cdelospoetas.cl',
   vite: {
     plugins: [tailwindcss()]
   },

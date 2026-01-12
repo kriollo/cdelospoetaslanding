@@ -88,3 +88,60 @@ import garden from "../assets/garden.webp";
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Text content animation from left
+  gsap.from("#experience .w-full.lg\\:w-1\\/2:first-child", {
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#experience",
+      start: "top 80%",
+      end: "top 50%",
+      scrub: 1,
+    },
+  });
+
+  // Image animation from right
+  gsap.from("#experience .w-full.lg\\:w-1\\/2:last-child", {
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#experience",
+      start: "top 80%",
+      end: "top 50%",
+      scrub: 1,
+    },
+  });
+
+  // Feature items stagger animation
+  gsap.from("#experience .space-y-6 > div", {
+    y: 30,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: "#experience .space-y-6",
+      start: "top 85%",
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  // Decorative blobs floating animation
+  gsap.to("#experience .absolute", {
+    y: "random(-20, 20)",
+    x: "random(-20, 20)",
+    duration: 3,
+    ease: "sine.inOut",
+    stagger: 0.5,
+    repeat: -1,
+    yoyo: true,
+  });
+</script>

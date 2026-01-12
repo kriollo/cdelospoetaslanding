@@ -39,71 +39,80 @@ const images = [hero4, hero1, hero5, hero2, hero6, hero3];
 
   <!-- Content -->
   <div class="relative z-20 container mx-auto px-4 flex flex-col items-center">
-    <!-- Logo -->
-    <div class="mb-8 opacity-0 translate-y-10" id="hero-logo">
-      <Image
-        src={import("../assets/logo.webp")}
-        alt="Logo Centro de Descanso Los Poetas"
-        class="w-48 md:w-64 h-auto drop-shadow-2xl"
-        loading="eager"
-        widths={[192, 256]}
-        sizes="(max-width: 768px) 192px, 256px"
-      />
+    <!-- Logo Wrapper for Parallax -->
+    <div id="hero-logo-parallax" class="mb-8">
+      <!-- Logo -->
+      <div class="opacity-0 translate-y-10" id="hero-logo">
+        <Image
+          src={import("../assets/logo.webp")}
+          alt="Logo Centro de Descanso Los Poetas"
+          class="w-48 md:w-64 h-auto drop-shadow-2xl"
+          loading="eager"
+          widths={[192, 256]}
+          sizes="(max-width: 768px) 192px, 256px"
+        />
+      </div>
     </div>
 
-    <!-- Main Text -->
-    <h1
-      class="text-4xl md:text-6xl lg:text-7xl font-light mb-6 tracking-wide drop-shadow-2xl opacity-0 translate-y-10"
-      id="hero-title"
-    >
-      <span
-        class="block text-2xl md:text-3xl mb-2 font-light italic text-sky-200 drop-shadow-md"
-        >Sal de la rutina</span
-      >
-      Descanso para el <br class="md:hidden" />
-      <span class="font-bold">Cuerpo y Alma</span>
-    </h1>
-
-    <p
-      class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-slate-100 opacity-0 translate-y-10 drop-shadow-lg"
-      id="hero-subtitle"
-    >
-      Un refugio boutique en El Quisco. Cabañas de alto estándar a pasos del
-      mar, diseñadas para tu paz y seguridad.
-    </p>
-
-    <!-- CTAs -->
+    <!-- Text Wrapper for Parallax -->
     <div
-      class="flex flex-col md:flex-row gap-4 opacity-0 translate-y-10"
-      id="hero-cta"
+      id="hero-text-parallax"
+      class="flex flex-col items-center text-center w-full"
     >
-      <a
-        href="https://wa.me/56952299793"
-        target="_blank"
-        class="bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-emerald-500/30 flex items-center justify-center gap-2"
+      <!-- Main Text -->
+      <h1
+        class="text-4xl md:text-6xl lg:text-7xl font-light mb-6 tracking-wide drop-shadow-2xl opacity-0 translate-y-10"
+        id="hero-title"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <span
+          class="block text-2xl md:text-3xl mb-2 font-light italic text-sky-200 drop-shadow-md"
+          >Sal de la rutina</span
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-          ></path>
-        </svg>
-        Reservar por WhatsApp
-      </a>
-      <a
-        href="#experience"
-        class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-medium py-3 px-8 rounded-full transition-all duration-300"
+        Descanso para el <br class="md:hidden" />
+        <span class="font-bold">Cuerpo y Alma</span>
+      </h1>
+
+      <p
+        class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-slate-100 opacity-0 translate-y-10 drop-shadow-lg"
+        id="hero-subtitle"
       >
-        Descubre la Experiencia
-      </a>
+        Un refugio boutique en El Quisco. Cabañas de alto estándar a pasos del
+        mar, diseñadas para tu paz y seguridad.
+      </p>
+
+      <!-- CTAs -->
+      <div
+        class="flex flex-col md:flex-row gap-4 opacity-0 translate-y-10"
+        id="hero-cta"
+      >
+        <a
+          href="https://wa.me/56952299793"
+          target="_blank"
+          class="bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-emerald-500/30 flex items-center justify-center gap-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+            ></path>
+          </svg>
+          Reservar por WhatsApp
+        </a>
+        <a
+          href="#experience"
+          class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-medium py-3 px-8 rounded-full transition-all duration-300"
+        >
+          Descubre la Experiencia
+        </a>
+      </div>
     </div>
   </div>
 
@@ -129,6 +138,9 @@ const images = [hero4, hero1, hero5, hero2, hero6, hero3];
 
 <script>
   import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
 
   // Existing GSAP Animations
   const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -137,6 +149,43 @@ const images = [hero4, hero1, hero5, hero2, hero6, hero3];
     .to("#hero-title", { opacity: 1, y: 0, duration: 1, stagger: 0.2 }, "-=0.8")
     .to("#hero-subtitle", { opacity: 1, y: 0, duration: 1 }, "-=0.8")
     .to("#hero-cta", { opacity: 1, y: 0, duration: 0.8 }, "-=0.6");
+
+  // Parallax Effects on Scroll
+  gsap.to("[data-hero-slide]", {
+    yPercent: 30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to("#hero-logo-parallax", {
+    opacity: 0,
+    scale: 0.8,
+    y: -50,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to("#hero-text-parallax", {
+    opacity: 0,
+    y: -30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
 
   // Slider Logic
   const slides = document.querySelectorAll("[data-hero-slide]");

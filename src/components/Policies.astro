@@ -116,3 +116,48 @@
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Section title animation
+  gsap.from("#politicas .text-center", {
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: "#politicas",
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  // Policy cards stagger animation
+  gsap.from("#politicas .grid > div", {
+    y: 50,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#politicas .grid",
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  // Bottom badge animation
+  gsap.from("#politicas .mt-8", {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: "#politicas .mt-8",
+      start: "top 90%",
+      toggleActions: "play none none reverse",
+    },
+  });
+</script>
